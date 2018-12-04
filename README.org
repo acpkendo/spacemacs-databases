@@ -1,0 +1,37 @@
+#+TITLE: databases layer
+
+My first contribution to the open source community... huzzah!
+
+This is licensed under the GPL v3.0. No warranty expressed or implied. But it should work.
+
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+
+This is a simple layer I created to go along with the two Emacs packages provided by the [[https://www.gnu.org/software/recutils/][RecUtils]] project. I may expand this to install other database-related items if I need them.
+
+
+* Install
+
+Firstly, you'll probably have the RecUtils package installed for this to be very useful, however it's not required (Emacs can read and syntax-hightlight a .rec file just fine without the command line utilities). If you don't, and you want them, you can install with your distro's package manager (e.g. in Ubuntu-based ones):
+
+#+BEGIN_SRC bash
+$ sudo apt install recutils
+#+END_SRC
+
+If you don't have the package installed you can just download an archive of it from the [[https://www.gnu.org/software/recutils/][RecUtils web site]]. Next, you'll need to get the the Lisp packages for the recutils mode (rec-mode.el) and Babel handler (ob-rec.el).
+
+- If you installed through a package manager, check where the package installed them. On Ubuntu it's in ~/usr/share/emacs/site-lisp/*.el~.
+- If you downloaded, just sift through the archive for them.
+
+Put these into your ~.emacs.d/private/local/~ directory, each in their own folder with their name minus the ".el" part. Then extract this archive to ~.emacs.d/private~, or clone the repo there if that's your thing. You should end up with a directory ~.emacs.d/private/database~.
+
+Finally, add ~databases~ to your =~/.spacemacs=. You will need to add =databases= to the existing =dotspacemacs-configuration-layers= list in this file.
+
+
+* Key bindings
+
+No additional keybindings outside of what the packages themselves provide.
