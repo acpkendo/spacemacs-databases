@@ -1,4 +1,4 @@
-;;; packages.el --- databases layer packages file for Spacemacs.
+;;; packages.el --- spacemacs-databases layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2018 
 ;;
@@ -18,40 +18,38 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `databases-packages'. Then, for each package PACKAGE:
+;; added to `spacemacs-databases-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `databases/init-PACKAGE' to load and initialize the package.
+;;   function `spacemacs-databases/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
 ;;   define the functions `databases/pre-init-PACKAGE' and/or
-;;   `databases/post-init-PACKAGE' to customize the package as it is loaded.
+;;   `spacemacs-databases/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst databases-packages
+(defconst spacemacs-databases-packages
     '(
         (rec-mode :location local)
         (ob-rec :location local)
     )
 )
 
-(defun databases/init-databases
+(defun spacemacs-databases/init-databases
     init:
 )
 
-(defun databases/init-rec-mode ()
+(defun spacemacs-databases/init-rec-mode ()
     (use-package rec-mode
     :mode (("\\.rec?\\'" . rec-mode))
     :defer t)
 )
 
-(defun databases/init-ob-rec ()
+(defun spacemacs-databases/init-ob-rec ()
     (use-package ob-recipe
     :defer t)
 )
-
-;; Add (ob-rec :location local) to the above when possible.
 
 ;;;
 ;;  "The list of Lisp packages required by the databases layer.
